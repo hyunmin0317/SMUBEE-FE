@@ -23,29 +23,35 @@ interface RetrofitService {
         @Field("password") password: String
     ): Call<User>
 
-    @GET("post/all/")
-    fun getAllPosts(): Call<ArrayList<Post>>
 
-    @Multipart
-    @POST("post/create/")
-    fun uploadPost(
-        @Part image : MultipartBody.Part,
-        @Part ("content")requestBody : RequestBody
-    ):Call<Post>
+    @GET("planner/date/{date}/")
+    fun getPlanList(
+        @Path("date") date: String
+    ): Call<ArrayList<Plan>>
 
-    @GET("post/mylist/")
-    fun getUserPostList():Call<ArrayList<Post>>
-
-    @DELETE("post/{pk}/delete/")
-    fun deletePost(
-        @Path("pk") pk: Int
-    ):Call<Post>
-
-    @Multipart
-    @PUT("post/{pk}/update/")
-    fun updatePost(
-        @Path("pk") pk: Int,
-        @Part image: MultipartBody.Part,
-        @Part ("content") requestBody: RequestBody
-    ):Call<Post>
+//    @GET("post/all/")
+//    fun getAllPosts(): Call<ArrayList<Post>>
+//
+//    @Multipart
+//    @POST("post/create/")
+//    fun uploadPost(
+//        @Part image : MultipartBody.Part,
+//        @Part ("content")requestBody : RequestBody
+//    ):Call<Post>
+//
+//    @GET("post/mylist/")
+//    fun getUserPostList():Call<ArrayList<Post>>
+//
+//    @DELETE("post/{pk}/delete/")
+//    fun deletePost(
+//        @Path("pk") pk: Int
+//    ):Call<Post>
+//
+//    @Multipart
+//    @PUT("post/{pk}/update/")
+//    fun updatePost(
+//        @Path("pk") pk: Int,
+//        @Part image: MultipartBody.Part,
+//        @Part ("content") requestBody: RequestBody
+//    ):Call<Post>
 }
