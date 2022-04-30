@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 
-class MainActivity : AppCompatActivity() {
+class PlannerActivity : AppCompatActivity() {
     var userID: String = "userID"
     lateinit var fname: String
     lateinit var str: String
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_planner)
 
         // UI값 생성
         calendarView=findViewById(R.id.calendarView)
