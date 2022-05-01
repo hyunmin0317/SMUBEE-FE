@@ -15,6 +15,7 @@ import retrofit2.Response
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        deleteUserToken()
 
         setContentView(R.layout.activity_login)
         setupListener(this@LoginActivity)
@@ -56,6 +57,14 @@ class LoginActivity : AppCompatActivity() {
         val editor = sp.edit()
         editor.putString("username", username)
         editor.putString("token", token)
+        editor.commit()
+    }
+
+    fun deleteUserToken() {
+        val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
+        val editor = sp.edit()
+        editor.putString("username", "null")
+        editor.putString("token", "null")
         editor.commit()
     }
 }
