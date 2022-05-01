@@ -35,7 +35,7 @@ class PlannerActivity : AppCompatActivity() {
                             val planlist = response.body()
                             val adapter = PlanAdapter(
                                 planlist!!,
-                                LayoutInflater.from(this@PlannerActivity),
+                                LayoutInflater.from(this@PlannerActivity)
                             )
                             planlist.reverse()
                             plan_recyclerview.adapter = adapter

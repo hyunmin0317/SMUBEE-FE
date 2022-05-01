@@ -14,9 +14,11 @@ class PlanAdapter(
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView
+        val content: TextView
 
         init {
             title = itemView.findViewById(R.id.title)
+            content = itemView.findViewById(R.id.content)
         }
     }
 
@@ -31,5 +33,6 @@ class PlanAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.title.setText(planList.get(position).title)
+        holder.content.setText(planList.get(position).content)
     }
 }
