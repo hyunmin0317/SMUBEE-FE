@@ -28,6 +28,9 @@ class PlannerActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        calendarView.addDecorator(SaturdayDecorator())
+        calendarView.addDecorator(SundayDecorator())
+
         calendarView.setOnDateChangedListener { widget, date, selected ->
             Date = String.format("%04d-%02d-%02d", date.year, date.month+1, date.day)
             changeDate(Date)
