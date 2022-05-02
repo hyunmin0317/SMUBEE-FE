@@ -15,7 +15,6 @@ import retrofit2.Response
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        deleteUserToken()
 
         setContentView(R.layout.activity_login)
         setupListener(this@LoginActivity)
@@ -35,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         val user = response.body()
                         val token = user!!.token!!
-                        saveUserToken(username, token, activity)
+                        saveUserToken(username, token)
                         (application as MasterApplication).createRetrofit()
 
                         Toast.makeText(activity, "로그인 하셨습니다.", Toast.LENGTH_LONG).show()
@@ -52,19 +51,11 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun saveUserToken(username: String, token: String, activity: Activity) {
-        val sp = activity.getSharedPreferences("login_sp", Context.MODE_PRIVATE)
+    fun saveUserToken(username: String, token: String) {
+        val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
         val editor = sp.edit()
         editor.putString("username", username)
         editor.putString("token", token)
-        editor.commit()
-    }
-
-    fun deleteUserToken() {
-        val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
-        val editor = sp.edit()
-        editor.putString("username", "null")
-        editor.putString("token", "null")
         editor.commit()
     }
 }
