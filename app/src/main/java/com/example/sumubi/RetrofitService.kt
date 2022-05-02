@@ -44,6 +44,12 @@ interface RetrofitService {
         @Body plan: Plan
     ):Call<Plan>
 
+    @PUT("planner/{pk}/update/")
+    fun updatePlan(
+        @Path("pk") pk: Int,
+        @Body plan: Plan
+    ):Call<Plan>
+
 //    @GET("post/all/")
 //    fun getAllPosts(): Call<ArrayList<Post>>
 //

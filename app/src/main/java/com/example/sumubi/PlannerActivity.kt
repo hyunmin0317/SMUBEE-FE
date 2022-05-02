@@ -28,15 +28,14 @@ class PlannerActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        home.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
-        upload.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
-        user_info.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
-
-
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
             date = String.format("%04d-%02d-%02d", year, month+1, dayOfMonth)
             changeDate(date)
         }
+
+        home.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
+        upload.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
+        user_info.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
     }
 
     fun changeDate(date: String) {

@@ -46,6 +46,14 @@ class PlanAdapter(
                     }
                 })
             }
+
+            itemView.findViewById<TextView>(R.id.update).setOnClickListener {
+                val intent = Intent(activity, UpdateActivity::class.java)
+                val plan = planList.get(adapterPosition)
+                intent.putExtra("pk", plan.id)
+                intent.putExtra("date", plan.date)
+                activity.startActivity(intent)
+            }
         }
     }
 
