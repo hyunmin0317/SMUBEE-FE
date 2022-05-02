@@ -19,18 +19,18 @@ class PlannerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_planner)
         val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
-        var date = simpleDateFormat.format(System.currentTimeMillis())
-        changeDate(date)
+        var Date = simpleDateFormat.format(System.currentTimeMillis())
+        changeDate(Date)
 
         create.setOnClickListener {
             val intent = Intent(this, CreateActivity::class.java)
-            intent.putExtra("date", date)
+            intent.putExtra("date", Date)
             startActivity(intent)
         }
 
-        calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            date = String.format("%04d-%02d-%02d", year, month+1, dayOfMonth)
-            changeDate(date)
+        calendarView.setOnDateChangedListener { widget, date, selected ->
+            Date = String.format("%04d-%02d-%02d", date.year, date.month+1, date.day)
+            changeDate(Date)
         }
 
         home.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
