@@ -33,6 +33,11 @@ interface RetrofitService {
     @GET("planner/all/")
     fun allPlanList(): Call<ArrayList<Plan>>
 
+    @DELETE("planner/{pk}/delete/")
+    fun deletePlan(
+        @Path("pk") pk: Int
+    ):Call<Plan>
+
 //    @GET("post/all/")
 //    fun getAllPosts(): Call<ArrayList<Post>>
 //
