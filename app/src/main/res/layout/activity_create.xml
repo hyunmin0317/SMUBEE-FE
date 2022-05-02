@@ -76,7 +76,6 @@
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
 
-
         <TextView
             android:id="@+id/home"
             android:layout_width="0dp"
@@ -86,7 +85,7 @@
             android:gravity="center" />
 
         <TextView
-            android:id="@+id/mypage"
+            android:id="@+id/planner"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -94,7 +93,7 @@
             android:gravity="center" />
 
         <TextView
-            android:id="@+id/upload"
+            android:id="@+id/notice"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -108,7 +107,6 @@
             android:layout_weight="1"
             android:background="@drawable/setting"
             android:gravity="center" />
-
 
     </LinearLayout>
 

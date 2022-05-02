@@ -5,13 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_create.*
-import kotlinx.android.synthetic.main.activity_create.date_view
-import kotlinx.android.synthetic.main.activity_create.home
-import kotlinx.android.synthetic.main.activity_create.upload
-import kotlinx.android.synthetic.main.activity_create.user_info
-import kotlinx.android.synthetic.main.activity_planner.*
-import okhttp3.MediaType
-import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -31,6 +24,11 @@ class CreateActivity : AppCompatActivity() {
             val content = content_view.text.toString()
             uploadPost(date, title, content)
         }
+
+        home.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
+        planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
+        notice.setOnClickListener { startActivity(Intent(this, NoticeActivity::class.java)) }
+        user_info.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
     }
 
     fun uploadPost(date: String, title: String, content: String) {

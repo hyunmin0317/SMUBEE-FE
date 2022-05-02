@@ -20,6 +20,11 @@ class UpdateActivity : AppCompatActivity() {
             val content = content_view.text.toString()
             uploadPost(pk, title, content)
         }
+
+        home.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
+        planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
+        notice.setOnClickListener { startActivity(Intent(this, NoticeActivity::class.java)) }
+        user_info.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
     }
 
     fun uploadPost(pk: Int, title: String, content: String) {

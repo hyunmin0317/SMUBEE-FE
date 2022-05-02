@@ -17,9 +17,10 @@ class UserInfoActivity : AppCompatActivity() {
             username = ""
         user.text = username
 
-        home.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
-        mypage.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
-        upload.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
+        home.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
+        planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
+        notice.setOnClickListener { startActivity(Intent(this, NoticeActivity::class.java)) }
+        user_info.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
 
         logout.setOnClickListener {
             deleteUserToken()
