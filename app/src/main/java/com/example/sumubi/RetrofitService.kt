@@ -38,6 +38,12 @@ interface RetrofitService {
         @Path("pk") pk: Int
     ):Call<Plan>
 
+    @POST("planner/date/{date}/create/")
+    fun createPlan(
+        @Path("date") date: String,
+        @Body plan: Plan
+    ):Call<Plan>
+
 //    @GET("post/all/")
 //    fun getAllPosts(): Call<ArrayList<Post>>
 //

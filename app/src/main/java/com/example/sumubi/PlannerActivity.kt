@@ -22,6 +22,11 @@ class PlannerActivity : AppCompatActivity() {
         var date = simpleDateFormat.format(System.currentTimeMillis())
         changeDate(date)
 
+        create.setOnClickListener {
+            val intent = Intent(this, CreateActivity::class.java)
+            intent.putExtra("date", date)
+            startActivity(intent)
+        }
 
         home.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
         upload.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
@@ -51,7 +56,6 @@ class PlannerActivity : AppCompatActivity() {
                             LayoutInflater.from(this@PlannerActivity),
                             this@PlannerActivity
                         )
-                        planlist.reverse()
                         plan_recyclerview.adapter = adapter
                         plan_recyclerview.layoutManager = LinearLayoutManager(this@PlannerActivity)
                     } else {
