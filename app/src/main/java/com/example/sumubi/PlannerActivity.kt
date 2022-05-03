@@ -14,7 +14,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
-import java.util.*
 import kotlin.collections.ArrayList
 
 
@@ -25,6 +24,7 @@ class PlannerActivity : AppCompatActivity() {
         val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
         var Date = simpleDateFormat.format(System.currentTimeMillis())
         changeDate(Date)
+        getEvent()
 
         create.setOnClickListener {
             val intent = Intent(this, CreateActivity::class.java)
@@ -32,19 +32,8 @@ class PlannerActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val calendar = ArrayList<CalendarDay>()
-        calendar.add(CalendarDay.from(2022, 4, 4))
-        calendar.add(CalendarDay.from(2022, 4, 10))
-        calendar.add(CalendarDay.from(2022, 4, 15))
-
         calendarView.setSelectedDate(CalendarDay.today())
-        calendarView.addDecorators(
-            SaturdayDecorator(),
-            SundayDecorator(),
-            SelectorDecorator(this),
-            OneDayDecorator(),
-            EventDecorator(Color.RED, calendar)
-        )
+        calendarView.addDecorators(SaturdayDecorator(), SundayDecorator(), SelectorDecorator(this), OneDayDecorator())
 
         calendarView.setOnDateChangedListener { widget, date, selected ->
             Date = String.format("%04d-%02d-%02d", date.year, date.month+1, date.day)
@@ -76,6 +65,37 @@ class PlannerActivity : AppCompatActivity() {
                         )
                         plan_recyclerview.adapter = adapter
                         plan_recyclerview.layoutManager = LinearLayoutManager(this@PlannerActivity)
+                    } else {
+                        Toast.makeText(this@PlannerActivity, "400 Bad Request", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<ArrayList<Plan>>, t: Throwable) {
+                    Toast.makeText(this@PlannerActivity, "서버 오류", Toast.LENGTH_LONG).show()
+                }
+            }
+        )
+    }
+
+    fun getEvent() {
+        (application as MasterApplication).service.allPlanList().enqueue(
+            object : Callback<ArrayList<Plan>> {
+                override fun onResponse(
+                    call: Call<ArrayList<Plan>>,
+                    response: Response<ArrayList<Plan>>
+                ) {
+
+                    if (response.isSuccessful) {
+                        val calendar = ArrayList<CalendarDay>()
+                        val planlist = response.body()
+
+                        for (plan in planlist!!) {
+                            val date = plan.date!!.split('T')
+                            val Date = date[0].split('-')
+                            calendar.add(CalendarDay.from(Date[0].toInt(), Date[1].toInt()-1, Date[2].toInt()))
+                        }
+
+                        calendarView.addDecorator(EventDecorator(Color.RED, calendar))
                     } else {
                         Toast.makeText(this@PlannerActivity, "400 Bad Request", Toast.LENGTH_SHORT).show()
                     }
