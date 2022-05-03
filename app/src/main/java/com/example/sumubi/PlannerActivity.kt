@@ -2,16 +2,20 @@ package com.example.sumubi
 
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.prolificinteractive.materialcalendarview.CalendarDay
 import kotlinx.android.synthetic.main.activity_planner.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class PlannerActivity : AppCompatActivity() {
@@ -28,8 +32,19 @@ class PlannerActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        calendarView.addDecorator(SaturdayDecorator())
-        calendarView.addDecorator(SundayDecorator())
+        val calendar = ArrayList<CalendarDay>()
+        calendar.add(CalendarDay.from(2022, 4, 4))
+        calendar.add(CalendarDay.from(2022, 4, 10))
+        calendar.add(CalendarDay.from(2022, 4, 15))
+
+        calendarView.setSelectedDate(CalendarDay.today())
+        calendarView.addDecorators(
+            SaturdayDecorator(),
+            SundayDecorator(),
+            SelectorDecorator(this),
+            OneDayDecorator(),
+            EventDecorator(Color.RED, calendar)
+        )
 
         calendarView.setOnDateChangedListener { widget, date, selected ->
             Date = String.format("%04d-%02d-%02d", date.year, date.month+1, date.day)
