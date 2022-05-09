@@ -24,7 +24,8 @@ class PlannerActivity : AppCompatActivity() {
         val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
         var Date = simpleDateFormat.format(System.currentTimeMillis())
         changeDate(Date)
-        getEvent()
+        getPlan()
+        getClass()
 
         create.setOnClickListener {
             val intent = Intent(this, CreateActivity::class.java)
@@ -77,8 +78,39 @@ class PlannerActivity : AppCompatActivity() {
         )
     }
 
-    fun getEvent() {
+    fun getPlan() {
         (application as MasterApplication).service.allPlanList().enqueue(
+            object : Callback<ArrayList<Plan>> {
+                override fun onResponse(
+                    call: Call<ArrayList<Plan>>,
+                    response: Response<ArrayList<Plan>>
+                ) {
+
+                    if (response.isSuccessful) {
+                        val calendar = ArrayList<CalendarDay>()
+                        val planlist = response.body()
+
+                        for (plan in planlist!!) {
+                            val date = plan.date!!.split('T')
+                            val Date = date[0].split('-')
+                            calendar.add(CalendarDay.from(Date[0].toInt(), Date[1].toInt()-1, Date[2].toInt()))
+                        }
+
+                        calendarView.addDecorator(EventDecorator(Color.BLUE, calendar))
+                    } else {
+                        Toast.makeText(this@PlannerActivity, "400 Bad Request", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<ArrayList<Plan>>, t: Throwable) {
+                    Toast.makeText(this@PlannerActivity, "서버 오류", Toast.LENGTH_LONG).show()
+                }
+            }
+        )
+    }
+
+    fun getClass() {
+        (application as MasterApplication).service.allClassList().enqueue(
             object : Callback<ArrayList<Plan>> {
                 override fun onResponse(
                     call: Call<ArrayList<Plan>>,
