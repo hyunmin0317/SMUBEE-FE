@@ -52,6 +52,47 @@
             android:textColor="#ffffff"
             android:textStyle="bold" />
 
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/check"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="스마트 출결"
+            android:textSize="20dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/potal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="상명대학교 포털"
+            android:textSize="20dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/library"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="상명대학교 학술정보관"
+            android:textSize="20dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout

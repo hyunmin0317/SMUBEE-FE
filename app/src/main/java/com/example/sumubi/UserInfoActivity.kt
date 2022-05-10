@@ -2,9 +2,11 @@ package com.example.sumubi
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_user_info.*
+import java.lang.Exception
 
 
 class UserInfoActivity : AppCompatActivity() {
@@ -12,6 +14,7 @@ class UserInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_info)
 
+        var appPackage = ""
         var username = getUserName()
         if (username == null)
             username = ""
@@ -27,6 +30,19 @@ class UserInfoActivity : AppCompatActivity() {
             (application as MasterApplication).createRetrofit()
             finish()
             startActivity(Intent(this, IntroActivity::class.java))
+        }
+
+        check.setOnClickListener {
+            appPackage = "kr.co.echeck.smu"
+            checkInstalledApp(appPackage)
+        }
+        potal.setOnClickListener {
+            appPackage = "com.tomatosystem.pushapp"
+            checkInstalledApp(appPackage)
+        }
+        library.setOnClickListener {
+            appPackage = "kr.ac.smcl.library"
+            checkInstalledApp(appPackage)
         }
     }
 
@@ -44,5 +60,17 @@ class UserInfoActivity : AppCompatActivity() {
         editor.putString("username", "null")
         editor.putString("token", "null")
         editor.commit()
+    }
+
+    fun checkInstalledApp(packageName: String) {
+        if (packageManager.getLaunchIntentForPackage(packageName)==null) {
+            try {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+packageName)))
+            } catch (e: Exception) {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+packageName)))
+            }
+        }
+        else
+            startActivity(packageManager.getLaunchIntentForPackage(packageName))
     }
 }
