@@ -23,26 +23,19 @@
             android:value="qiuj5u6fj6" />
 
         <activity
-            android:name=".NoticeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" >
+            android:name=".IntroActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".UpdateActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CreateActivity"
-            android:exported="false" />
-        <activity
-            android:name=".IntroActivity"
-            android:exported="false" />
+
+        <activity android:name=".NoticeActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".UpdateActivity" />
+        <activity android:name=".CreateActivity" />
         <activity android:name=".UserInfoActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignupActivity" />
