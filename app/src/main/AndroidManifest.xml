@@ -15,12 +15,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SUMUBI"
         android:usesCleartextTraffic="true">
+
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="qiuj5u6fj6" />
+
         <activity
             android:name=".NoticeActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".UpdateActivity"
             android:exported="false" />
@@ -29,13 +40,7 @@
             android:exported="false" />
         <activity
             android:name=".IntroActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity android:name=".UserInfoActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignupActivity" />
