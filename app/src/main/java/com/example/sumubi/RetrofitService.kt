@@ -6,43 +6,43 @@ import retrofit2.http.*
 
 interface RetrofitService {
 
-    @POST("user/signup/")
+    @POST("users/signup/")
     @FormUrlEncoded
     fun register(
         @Field("username") username: String,
         @Field("password") password: String
     ): Call<User>
 
-    @POST("user/login/")
+    @POST("users/login/")
     @FormUrlEncoded
     fun login(
         @Field("username") username: String,
         @Field("password") password: String
     ): Call<User>
 
-    @GET("planner/date/{date}/")
+    @GET("planners/date/{date}/")
     fun getPlanList(
         @Path("date") date: String
     ): Call<ArrayList<Plan>>
 
-    @GET("planner/plan/all/")
+    @GET("planners/plan/all/")
     fun allPlanList(): Call<ArrayList<Plan>>
 
-    @GET("planner/class/all/")
+    @GET("planners/class/all/")
     fun allClassList(): Call<ArrayList<Plan>>
 
-    @DELETE("planner/{pk}/delete/")
+    @DELETE("planners/{pk}/delete/")
     fun deletePlan(
         @Path("pk") pk: Int
     ): Call<Plan>
 
-    @POST("planner/date/{date}/create/")
+    @POST("planners/date/{date}/create/")
     fun createPlan(
         @Path("date") date: String,
         @Body plan: Plan
     ): Call<Plan>
 
-    @PUT("planner/{pk}/update/")
+    @PUT("planners/{pk}/update/")
     fun updatePlan(
         @Path("pk") pk: Int,
         @Body plan: Plan
