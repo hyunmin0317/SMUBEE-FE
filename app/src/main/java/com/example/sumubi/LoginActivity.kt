@@ -21,7 +21,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun setupListener(activity: Activity) {
-        signup.setOnClickListener { startActivity(Intent(activity, SignupActivity::class.java)) }
 
         login.setOnClickListener {
             val username = username_inputbox.text.toString()
@@ -40,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(activity, "로그인 하셨습니다.", Toast.LENGTH_LONG).show()
                         startActivity(Intent(activity, PlannerActivity::class.java))
                     } else {
-                        Toast.makeText(activity, "가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.", Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity, "e-Campus 아이디, 비밀번호가\n일치하지 않습니다.", Toast.LENGTH_LONG).show()
                     }
                 }
 

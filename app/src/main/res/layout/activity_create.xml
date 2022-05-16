@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="SUMUBI"
+            android:text="SMUBEE"
             android:textSize="50dp"
             android:textColor="#000000"
             android:layout_margin="10dp"

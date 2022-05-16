@@ -38,7 +38,6 @@
         <activity android:name=".CreateActivity" />
         <activity android:name=".UserInfoActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".SignupActivity" />
         <activity android:name=".PlannerActivity" />
     </application>
 
