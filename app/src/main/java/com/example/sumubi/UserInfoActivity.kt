@@ -15,10 +15,13 @@ class UserInfoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_user_info)
 
         var appPackage = ""
-        var username = getUserName()
-        if (username == null)
-            username = ""
-        user.text = username
+        var username = getInformation("username")
+        var name = getInformation("name")
+        var major = getInformation("major")
+
+        user_id.text = username
+        user_name.text = name
+        user_major.text = major
 
         home.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
         planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
@@ -26,7 +29,7 @@ class UserInfoActivity : AppCompatActivity() {
         user_info.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
 
         logout.setOnClickListener {
-            deleteUserToken()
+            deleteInformation()
             (application as MasterApplication).createRetrofit()
             finish()
             startActivity(Intent(this, IntroActivity::class.java))
@@ -47,17 +50,19 @@ class UserInfoActivity : AppCompatActivity() {
     }
 
 
-    fun getUserName(): String? {
+    fun getInformation(info: String): String? {
         val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
-        val username = sp.getString("username", "null")
-        if (username == "null") return null
-        else return username
+        val information = sp.getString(info, "null")
+        if (information == "null") return null
+        else return information
     }
 
-    fun deleteUserToken() {
+    fun deleteInformation() {
         val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
         val editor = sp.edit()
         editor.putString("username", "null")
+        editor.putString("name", "null")
+        editor.putString("major", "null")
         editor.putString("token", "null")
         editor.commit()
     }

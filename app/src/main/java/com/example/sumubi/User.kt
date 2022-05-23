@@ -3,6 +3,7 @@ package com.example.sumubi
 import java.io.Serializable
 
 class User(
-    var username : String? = null,
+    var name : String? = null,
+    var major : String? = null,
     var token : String? = null
 ):Serializable

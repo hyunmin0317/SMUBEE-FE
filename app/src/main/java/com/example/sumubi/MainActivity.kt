@@ -46,12 +46,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         this.naverMap = naverMap
         naverMap.moveCamera(CameraUpdate.scrollTo(LatLng(37.6026, 126.9553)))
         naverMap.locationSource = locationSource
-        naverMap.locationTrackingMode = LocationTrackingMode.Follow
         naverMap.uiSettings.isLocationButtonEnabled = true
-
-        naverMap.addOnLocationChangeListener { location ->
-            Toast.makeText(this, "${location.latitude}, ${location.longitude}", Toast.LENGTH_SHORT).show()
-        }
     }
 
     companion object {

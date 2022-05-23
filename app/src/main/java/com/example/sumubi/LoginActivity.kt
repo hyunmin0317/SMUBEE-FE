@@ -32,8 +32,7 @@ class LoginActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<User>, response: Response<User>) {
                     if (response.isSuccessful) {
                         val user = response.body()
-                        val token = user!!.token!!
-                        saveUserToken(username, token)
+                        saveInformation(username, user!!.name!!, user!!.major!!, user!!.token!!)
                         (application as MasterApplication).createRetrofit()
 
                         Toast.makeText(activity, "로그인 하셨습니다.", Toast.LENGTH_LONG).show()
@@ -50,10 +49,12 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun saveUserToken(username: String, token: String) {
+    fun saveInformation(username: String, name: String, major: String, token: String) {
         val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
         val editor = sp.edit()
         editor.putString("username", username)
+        editor.putString("name", name)
+        editor.putString("major", major)
         editor.putString("token", token)
         editor.commit()
     }

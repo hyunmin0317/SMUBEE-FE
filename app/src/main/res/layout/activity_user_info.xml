@@ -28,70 +28,92 @@
 
 
         <TextView
-            android:id="@+id/user"
-            android:layout_marginTop="100dp"
-            android:layout_gravity="center"
+            android:id="@+id/user_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
             android:fontFamily="@font/acube"
-            android:textSize="35dp"
+            android:text="학번"
             android:textColor="#000000"
-            android:text="TextView" />
+            android:textSize="35dp" />
 
         <TextView
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/acube"
+            android:text="이름"
+            android:textColor="#000000"
+            android:textSize="35dp" />
+
+        <TextView
+            android:id="@+id/user_major"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/acube"
+            android:text="전공"
+            android:textColor="#000000"
+            android:textSize="35dp" />
+
+        <TextView
             android:id="@+id/logout"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/rounded_button"
             android:gravity="center"
             android:text="로그아웃"
-            android:textSize="20dp"
-            android:background="@drawable/rounded_button"
             android:textColor="#ffffff"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
             android:id="@+id/check"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/rounded_button"
             android:gravity="center"
             android:text="스마트 출결"
-            android:textSize="20dp"
-            android:background="@drawable/rounded_button"
             android:textColor="#ffffff"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
             android:id="@+id/potal"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/rounded_button"
             android:gravity="center"
             android:text="상명대학교 포털"
-            android:textSize="20dp"
-            android:background="@drawable/rounded_button"
             android:textColor="#ffffff"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
             android:id="@+id/library"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/rounded_button"
             android:gravity="center"
             android:text="상명대학교 학술정보관"
-            android:textSize="20dp"
-            android:background="@drawable/rounded_button"
             android:textColor="#ffffff"
+            android:textSize="20dp"
             android:textStyle="bold" />
     </LinearLayout>
 
