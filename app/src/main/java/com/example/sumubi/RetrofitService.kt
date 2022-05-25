@@ -47,4 +47,7 @@ interface RetrofitService {
         @Path("pk") pk: Int,
         @Body plan: Plan
     ): Call<Plan>
+
+    @GET("announcements/all/")
+    fun allAnnounceList(): Call<ArrayList<Announce>>
 }
