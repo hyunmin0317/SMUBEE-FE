@@ -1,6 +1,8 @@
 package com.example.sumubi
 
 import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,7 +29,13 @@ class AnnounceAdapter(
             number = itemView.findViewById(R.id.number)
             created_date = itemView.findViewById(R.id.created_date)
             views = itemView.findViewById(R.id.views)
+
+            itemView.findViewById<TextView>(R.id.title).setOnClickListener {
+                activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(announceList.get(adapterPosition).more_link)))
+            }
         }
+
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
