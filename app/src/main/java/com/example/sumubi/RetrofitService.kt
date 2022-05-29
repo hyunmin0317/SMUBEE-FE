@@ -6,13 +6,6 @@ import retrofit2.http.*
 
 interface RetrofitService {
 
-    @POST("users/signup/")
-    @FormUrlEncoded
-    fun register(
-        @Field("username") username: String,
-        @Field("password") password: String
-    ): Call<User>
-
     @POST("users/login/")
     @FormUrlEncoded
     fun login(
@@ -50,4 +43,7 @@ interface RetrofitService {
 
     @GET("announcements/all/")
     fun allAnnounceList(): Call<ArrayList<Announce>>
+
+    @GET("announcements/update/")
+    fun updateAnnounce(): Call<Announce>
 }

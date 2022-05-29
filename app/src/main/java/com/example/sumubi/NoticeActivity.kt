@@ -43,6 +43,20 @@ class NoticeActivity : AppCompatActivity() {
             }
         )
 
+        (application as MasterApplication).service.updateAnnounce().enqueue(
+            object : Callback<Announce> {
+                override fun onResponse(call: Call<Announce>, response: Response<Announce>) {
+                    if (!response.isSuccessful) {
+                        Toast.makeText(this@NoticeActivity, "400 Bad Request", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<Announce>, t: Throwable) {
+                    Toast.makeText(this@NoticeActivity, "서버 오류", Toast.LENGTH_LONG).show()
+                }
+            }
+        )
+
         home.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
         planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
         notice.setOnClickListener { startActivity(Intent(this, NoticeActivity::class.java)) }
