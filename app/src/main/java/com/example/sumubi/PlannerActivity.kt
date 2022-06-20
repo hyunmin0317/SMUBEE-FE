@@ -9,7 +9,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.prolificinteractive.materialcalendarview.CalendarDay
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_planner.*
+import kotlinx.android.synthetic.main.activity_planner.board
+import kotlinx.android.synthetic.main.activity_planner.home
+import kotlinx.android.synthetic.main.activity_planner.notice
+import kotlinx.android.synthetic.main.activity_planner.planner
+import kotlinx.android.synthetic.main.activity_planner.user_info
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -43,6 +49,7 @@ class PlannerActivity : AppCompatActivity() {
 
         home.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
         planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
+        board.setOnClickListener { startActivity(Intent(this, BoardActivity::class.java)) }
         notice.setOnClickListener { startActivity(Intent(this, NoticeActivity::class.java)) }
         user_info.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
     }

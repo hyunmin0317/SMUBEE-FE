@@ -86,11 +86,19 @@
             android:gravity="center" />
 
         <TextView
+            android:id="@+id/board"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/board"
+            android:gravity="center" />
+
+        <TextView
             android:id="@+id/planner"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/mypage"
+            android:background="@drawable/planner"
             android:gravity="center" />
 
         <TextView
@@ -98,7 +106,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/upload"
+            android:background="@drawable/notice"
             android:gravity="center" />
 
         <TextView

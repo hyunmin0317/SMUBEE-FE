@@ -5,6 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_create.*
+import kotlinx.android.synthetic.main.activity_create.board
+import kotlinx.android.synthetic.main.activity_create.home
+import kotlinx.android.synthetic.main.activity_create.notice
+import kotlinx.android.synthetic.main.activity_create.planner
+import kotlinx.android.synthetic.main.activity_create.user_info
+import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,6 +29,7 @@ class UpdateActivity : AppCompatActivity() {
 
         home.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
         planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
+        board.setOnClickListener { startActivity(Intent(this, BoardActivity::class.java)) }
         notice.setOnClickListener { startActivity(Intent(this, NoticeActivity::class.java)) }
         user_info.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
     }
