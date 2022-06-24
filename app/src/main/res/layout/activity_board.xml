@@ -28,7 +28,16 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal" />
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="게시판 페이지"
+            android:textSize="50dp"
+            android:textColor="#000000"
+            android:layout_margin="10dp"
+            android:gravity="center" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
