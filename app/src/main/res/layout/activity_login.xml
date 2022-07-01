@@ -57,10 +57,42 @@
             android:inputType="textPassword"
             android:textColorHint="#383A3C" />
 
-        <ImageView
-            android:id="@+id/login"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/enter" />
+            android:layout_height="80dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:text="로그인" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="20"
+                android:orientation="horizontal" />
+
+            <ImageView
+                android:id="@+id/login"
+                android:layout_weight="1"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/enter" />
+        </LinearLayout>
+
+
     </LinearLayout>
 </LinearLayout>

@@ -40,6 +40,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_margin="10dp"
             android:background="@drawable/home"
             android:gravity="center" />
 
@@ -48,6 +49,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_margin="10dp"
             android:background="@drawable/board"
             android:gravity="center" />
 
@@ -56,6 +58,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_margin="10dp"
             android:background="@drawable/planner"
             android:gravity="center" />
 
@@ -64,7 +67,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/notice"
+            android:layout_margin="10dp"
+            android:background="@drawable/noticeb"
             android:gravity="center" />
 
         <TextView
@@ -72,10 +76,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_margin="10dp"
             android:background="@drawable/setting"
             android:gravity="center" />
 
     </LinearLayout>
-
 </LinearLayout>
 
