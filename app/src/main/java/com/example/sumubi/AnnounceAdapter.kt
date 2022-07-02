@@ -2,6 +2,7 @@ package com.example.sumubi
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
@@ -19,14 +20,12 @@ class AnnounceAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView
         val campus: TextView
-        val number: TextView
         val created_date: TextView
         val views: TextView
 
         init {
             title = itemView.findViewById(R.id.title)
             campus = itemView.findViewById(R.id.campus)
-            number = itemView.findViewById(R.id.number)
             created_date = itemView.findViewById(R.id.created_date)
             views = itemView.findViewById(R.id.views)
 
@@ -49,9 +48,20 @@ class AnnounceAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.title.setText(announceList.get(position).title)
-        holder.campus.setText(announceList.get(position).campus)
-        holder.number.setText(announceList.get(position).number.toString())
         holder.created_date.setText(announceList.get(position).created_date)
         holder.views.setText(announceList.get(position).views.toString())
+
+        var campus = announceList.get(position).campus
+
+        if (campus == "seoul") {
+            holder.campus.setText("서울")
+            holder.campus.setTextColor(Color.parseColor("#2653B2"))
+        } else if (campus == "cheonan") {
+            holder.campus.setText("천안")
+            holder.campus.setTextColor(Color.parseColor("#96163D"))
+        } else {
+            holder.campus.setText("상명")
+            holder.campus.setTextColor(Color.parseColor("#E75581"))
+        }
     }
 }
