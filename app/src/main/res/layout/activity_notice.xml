@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#E5E5E5"
     android:orientation="vertical"
-    tools:context=".UserInfoActivity">
+    tools:context=".BoardActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,11 +23,20 @@
             android:gravity="center" />
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/announce_recyclerview"
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="알림 페이지"
+            android:textSize="50dp"
+            android:textColor="#000000"
+            android:gravity="center" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,7 +59,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_margin="10dp"
-            android:background="@drawable/board"
+            android:background="@drawable/boardb"
             android:gravity="center" />
 
         <TextView
@@ -68,7 +77,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_margin="10dp"
-            android:background="@drawable/noticeb"
+            android:background="@drawable/notice"
             android:gravity="center" />
 
         <TextView
@@ -81,5 +90,5 @@
             android:gravity="center" />
 
     </LinearLayout>
-</LinearLayout>
 
+</LinearLayout>
