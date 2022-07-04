@@ -42,7 +42,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/edittext_rounded_corner_rectangle"
+        android:background="@drawable/blue_box"
         android:hint="제목을 작성해주세요" />
 
     <EditText
@@ -52,7 +52,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_width="match_parent"
-        android:background="@drawable/edittext_rounded_corner_rectangle"
+        android:background="@drawable/blue_box"
         android:layout_height="300dp"
         android:hint="내용을 작성해주세요" />
 
