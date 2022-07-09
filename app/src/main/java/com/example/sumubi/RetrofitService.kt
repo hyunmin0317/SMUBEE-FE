@@ -41,11 +41,14 @@ interface RetrofitService {
         @Body plan: Plan
     ): Call<Plan>
 
+    @GET("planners/update/")
+    fun updatePlan(): Call<ArrayList<Plan>>
+
     @GET("announcements/{campus}/")
     fun allAnnounceList(
         @Path("campus") campus: String
     ): Call<ArrayList<Announce>>
 
     @GET("announcements/update/")
-    fun updateAnnounce(): Call<Announce>
+    fun updateAnnounce(): Call<String>
 }

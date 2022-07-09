@@ -32,6 +32,7 @@ class PlannerActivity : AppCompatActivity() {
         changeDate(Date)
         getPlan()
         getClass()
+        updateClass()
 
         create.setOnClickListener {
             val intent = Intent(this, CreateActivity::class.java)
@@ -136,6 +137,22 @@ class PlannerActivity : AppCompatActivity() {
 
                         calendarView.addDecorator(EventDecorator(Color.RED, calendar))
                     } else {
+                        Toast.makeText(this@PlannerActivity, "400 Bad Request", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<ArrayList<Plan>>, t: Throwable) {
+                    Toast.makeText(this@PlannerActivity, "서버 오류", Toast.LENGTH_LONG).show()
+                }
+            }
+        )
+    }
+
+    fun updateClass() {
+        (application as MasterApplication).service.updatePlan().enqueue(
+            object : Callback<ArrayList<Plan>> {
+                override fun onResponse(call: Call<ArrayList<Plan>>, response: Response<ArrayList<Plan>>) {
+                    if (!response.isSuccessful) {
                         Toast.makeText(this@PlannerActivity, "400 Bad Request", Toast.LENGTH_SHORT).show()
                     }
                 }
