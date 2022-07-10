@@ -82,14 +82,14 @@ class BoardActivity : AppCompatActivity() {
         )
 
         (application as MasterApplication).service.updateAnnounce().enqueue(
-            object : Callback<String> {
-                override fun onResponse(call: Call<String>, response: Response<String>) {
+            object : Callback<ArrayList<Announce>> {
+                override fun onResponse(call: Call<ArrayList<Announce>>, response: Response<ArrayList<Announce>>) {
                     if (!response.isSuccessful) {
                         Toast.makeText(this@BoardActivity, "400 Bad Request", Toast.LENGTH_SHORT).show()
                     }
                 }
 
-                override fun onFailure(call: Call<String>, t: Throwable) {
+                override fun onFailure(call: Call<ArrayList<Announce>>, t: Throwable) {
                     Toast.makeText(this@BoardActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }

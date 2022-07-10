@@ -50,5 +50,5 @@ interface RetrofitService {
     ): Call<ArrayList<Announce>>
 
     @GET("announcements/update/")
-    fun updateAnnounce(): Call<String>
+    fun updateAnnounce(): Call<ArrayList<Announce>>
 }
