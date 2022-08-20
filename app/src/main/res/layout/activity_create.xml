@@ -40,20 +40,18 @@
         android:layout_height="50dp"
         android:layout_below="@+id/date_view"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/blue_box"
         android:hint="제목을 작성해주세요" />
 
     <EditText
         android:id="@+id/content_view"
-        android:layout_below="@+id/title_view"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_width="match_parent"
-        android:background="@drawable/blue_box"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/title_view"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
         android:hint="내용을 작성해주세요" />
 
     <TextView
@@ -62,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/content_view"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="50dp"
         android:background="@drawable/rounded_button"
         android:gravity="center"
@@ -102,15 +100,6 @@
             android:layout_weight="1"
             android:layout_margin="10dp"
             android:background="@drawable/planner"
-            android:gravity="center" />
-
-        <TextView
-            android:id="@+id/notice"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_margin="10dp"
-            android:background="@drawable/notice"
             android:gravity="center" />
 
         <TextView

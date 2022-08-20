@@ -8,12 +8,6 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_board.*
-import kotlinx.android.synthetic.main.activity_board.board
-import kotlinx.android.synthetic.main.activity_board.home
-import kotlinx.android.synthetic.main.activity_board.notice
-import kotlinx.android.synthetic.main.activity_board.planner
-import kotlinx.android.synthetic.main.activity_board.user_info
-import kotlinx.android.synthetic.main.activity_planner.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,7 +43,6 @@ class BoardActivity : AppCompatActivity() {
         home.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
         planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
         board.setOnClickListener { startActivity(Intent(this, BoardActivity::class.java)) }
-        notice.setOnClickListener { startActivity(Intent(this, NoticeActivity::class.java)) }
         user_info.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
 
     }

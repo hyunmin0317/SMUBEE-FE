@@ -27,7 +27,6 @@ class CreateActivity : AppCompatActivity() {
 
         home.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
         planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
-        notice.setOnClickListener { startActivity(Intent(this, NoticeActivity::class.java)) }
         user_info.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
     }
 
