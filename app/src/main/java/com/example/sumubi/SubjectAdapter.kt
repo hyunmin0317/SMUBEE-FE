@@ -24,8 +24,10 @@ class SubjectAdapter(
             prof = itemView.findViewById(R.id.prof)
 
             itemView.findViewById<TextView>(R.id.name).setOnClickListener {
-                val intent = Intent(activity, UpdateActivity::class.java)
+                val intent = Intent(activity, SubjectActivity::class.java)
                 val subject = subjectList.get(adapterPosition)
+                intent.putExtra("name", subject.name)
+                intent.putExtra("prof", subject.prof)
                 intent.putExtra("code", subject.code)
                 activity.startActivity(intent)
             }

@@ -17,13 +17,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SUMUBI"
         android:usesCleartextTraffic="true" >
-        <activity
-            android:name=".BoardActivity"
-            android:exported="false" />
-
-        <meta-data
-            android:name="com.naver.maps.map.CLIENT_ID"
-            android:value="qiuj5u6fj6" />
 
         <activity
             android:name=".IntroActivity"
@@ -34,13 +27,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NoticeActivity" />
+        <activity android:name=".BoardActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".UpdateActivity" />
         <activity android:name=".CreateActivity" />
         <activity android:name=".UserInfoActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".PlannerActivity" />
+        <activity android:name=".SubjectActivity" />
     </application>
 
 </manifest>
