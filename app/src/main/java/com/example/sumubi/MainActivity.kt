@@ -4,14 +4,14 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.board
-import kotlinx.android.synthetic.main.activity_main.check
-import kotlinx.android.synthetic.main.activity_main.home
-import kotlinx.android.synthetic.main.activity_main.planner
-import kotlinx.android.synthetic.main.activity_main.user_info
-import kotlinx.android.synthetic.main.activity_user_info.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.lang.Exception
 
 
@@ -24,6 +24,35 @@ class MainActivity : AppCompatActivity() {
         var appPackage = ""
         var username = getInformation("name")
         name.text = username
+
+
+        (application as MasterApplication).service.getSubjectList().enqueue(
+            object : Callback<ArrayList<Subject>> {
+                override fun onResponse(
+                    call: Call<ArrayList<Subject>>,
+                    response: Response<ArrayList<Subject>>
+                ) {
+
+                    if (response.isSuccessful) {
+                        val subjectlist = response.body()
+                        val adapter = SubjectAdapter(
+                            subjectlist!!,
+                            LayoutInflater.from(this@MainActivity),
+                            this@MainActivity
+                        )
+                        course_recyclerview.adapter = adapter
+                        course_recyclerview.layoutManager = LinearLayoutManager(this@MainActivity)
+                    } else {
+                        Toast.makeText(this@MainActivity, "400 Bad Request", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<ArrayList<Subject>>, t: Throwable) {
+                    Toast.makeText(this@MainActivity, "서버 오류", Toast.LENGTH_LONG).show()
+                }
+            }
+        )
+
 
 
         home.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
