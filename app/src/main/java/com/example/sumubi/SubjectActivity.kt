@@ -21,7 +21,7 @@ class SubjectActivity : AppCompatActivity() {
 
         home.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
         planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
-        board.setOnClickListener { startActivity(Intent(this, SubjectActivity::class.java)) }
+        board.setOnClickListener { startActivity(Intent(this, BoardActivity::class.java)) }
         user_info.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
     }
 }
