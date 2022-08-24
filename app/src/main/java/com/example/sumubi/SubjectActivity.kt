@@ -1,6 +1,7 @@
 package com.example.sumubi
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -25,7 +26,23 @@ class SubjectActivity : AppCompatActivity() {
         subject_name.text = name
         professor.text = prof
 
+        course.setBackgroundResource(R.drawable.whitebox)
+        course.setTextColor(Color.parseColor("#000000"))
         changeFilter(code, "course")
+
+        course.setOnClickListener {
+            changeDeco()
+            course.setBackgroundResource(R.drawable.whitebox)
+            course.setTextColor(Color.parseColor("#000000"))
+            changeFilter(code, "course")
+        }
+
+        assign.setOnClickListener {
+            changeDeco()
+            assign.setBackgroundResource(R.drawable.whitebox)
+            assign.setTextColor(Color.parseColor("#000000"))
+            changeFilter(code, "assign")
+        }
 
         home.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
         planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
@@ -59,5 +76,12 @@ class SubjectActivity : AppCompatActivity() {
                 }
             }
         )
+    }
+
+    fun changeDeco() {
+        course.setBackgroundColor(Color.parseColor("#142D56"))
+        assign.setBackgroundColor(Color.parseColor("#142D56"))
+        course.setTextColor(Color.parseColor("#ffffff"))
+        assign.setTextColor(Color.parseColor("#ffffff"))
     }
 }
