@@ -54,4 +54,10 @@ interface RetrofitService {
 
     @GET("courses/all/")
     fun getSubjectList(): Call<ArrayList<Subject>>
+
+    @GET("courses/{code}/{category}/")
+    fun getDataList(
+        @Path("code") code: String,
+        @Path("category") category: String
+    ): Call<ArrayList<Data>>
 }
