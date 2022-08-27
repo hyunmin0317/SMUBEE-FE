@@ -17,6 +17,7 @@ class DataAdapter(
         val title: TextView
         val date: TextView
         val status: TextView
+        val checked: TextView
 
 
         init {
@@ -24,6 +25,7 @@ class DataAdapter(
             title = itemView.findViewById(R.id.title)
             date = itemView.findViewById(R.id.date)
             status = itemView.findViewById(R.id.status)
+            checked = itemView.findViewById(R.id.checked)
         }
     }
 
@@ -37,16 +39,19 @@ class DataAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.title.setText(dataList.get(position).title)
-        holder.date.setText(dataList.get(position).date)
-        holder.status.setText(dataList.get(position).status)
-
         var category = dataList.get(position).category
+        val checked = dataList.get(position).checked
+        if (category == "assign")
+            category = "과제"
+        else
+            category = "강의"
 
-        if (category == "course") {
-            holder.type.setText("강의")
-        } else if (category == "assign") {
-            holder.type.setText("과제")
-        }
+        if (checked!!)
+            holder.checked.setBackgroundResource(R.drawable.complete)
+
+        holder.title.setText(dataList.get(position).title)
+        holder.date.setText(dataList.get(position).date!!.substring(0,10))
+        holder.status.setText(dataList.get(position).status)
+        holder.type.setText(category)
     }
 }
