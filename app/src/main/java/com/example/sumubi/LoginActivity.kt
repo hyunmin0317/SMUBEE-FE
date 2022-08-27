@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
                         (application as MasterApplication).createRetrofit()
 
                         Toast.makeText(activity, "로그인 하셨습니다.", Toast.LENGTH_LONG).show()
-                        startActivity(Intent(activity, PlannerActivity::class.java))
+                        startActivity(Intent(activity, MainActivity::class.java))
                     } else {
                         Toast.makeText(activity, "e-Campus 아이디, 비밀번호가\n일치하지 않습니다.", Toast.LENGTH_LONG).show()
                     }
