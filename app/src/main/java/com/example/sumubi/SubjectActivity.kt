@@ -7,7 +7,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_board.*
 import kotlinx.android.synthetic.main.activity_subject.*
+import kotlinx.android.synthetic.main.activity_subject.board
+import kotlinx.android.synthetic.main.activity_subject.home
+import kotlinx.android.synthetic.main.activity_subject.notice
+import kotlinx.android.synthetic.main.activity_subject.planner
+import kotlinx.android.synthetic.main.activity_subject.user_info
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -48,6 +54,7 @@ class SubjectActivity : AppCompatActivity() {
         planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
         board.setOnClickListener { startActivity(Intent(this, BoardActivity::class.java)) }
         user_info.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
+        notice.setOnClickListener { startActivity(Intent(this, NoticeActivity::class.java)) }
     }
 
     fun changeFilter(code: String, category: String) {

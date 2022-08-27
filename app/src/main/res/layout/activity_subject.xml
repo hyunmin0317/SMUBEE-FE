@@ -123,7 +123,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_margin="10dp"
-            android:background="@drawable/homeb"
+            android:background="@drawable/home"
             android:gravity="center" />
 
         <TextView
@@ -145,12 +145,21 @@
             android:gravity="center" />
 
         <TextView
+            android:id="@+id/notice"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:background="@drawable/noticeb"
+            android:gravity="center" />
+
+        <TextView
             android:id="@+id/user_info"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_margin="10dp"
-            android:background="@drawable/setting"
+            android:background="@drawable/settingb"
             android:gravity="center" />
 
     </LinearLayout>

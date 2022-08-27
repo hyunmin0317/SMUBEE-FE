@@ -17,79 +17,69 @@
         android:layout_marginRight="10dp"
         android:background="#E5E5E5">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="알림"
+            android:textSize="25dp"
+            android:fontFamily="@font/acube"
+            android:textColor="#000000"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
+                android:id="@+id/all"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:text="이름"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:textSize="30dp"
-                android:fontFamily="@font/acube"
-                android:textColor="#000000"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp" />
-
-            <TextView
-                android:id="@+id/check"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/button"
-                android:text="v"
                 android:gravity="center"
                 android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="#000000"
                 android:textSize="20dp"
-                android:fontFamily="@font/acube"
-                android:textColor="#ffffff"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp" />
-
-        </LinearLayout>
-
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textSize="25dp"
-            android:layout_margin="10dp"
-            android:text="안녕하세요"
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginTop="30dp"
-            android:orientation="vertical">
-
+                android:text="전체"
+                />
             <TextView
+                android:id="@+id/complete"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:text="완료"
+                />
+            <TextView
+                android:id="@+id/incomplete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="강의진도율"
-                android:textSize="25dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="20dp"
                 android:layout_marginLeft="10dp"
-                android:fontFamily="@font/acube"
-                android:textColor="#000000" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/course_recyclerview"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
+                android:text="미완료"
+                />
 
         </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/announce_recyclerview"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -103,7 +93,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="10dp"
-                android:background="@drawable/homeb"
+                android:background="@drawable/home"
                 android:gravity="center" />
 
             <TextView
@@ -130,7 +120,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="10dp"
-                android:background="@drawable/notice"
+                android:background="@drawable/noticeb"
                 android:gravity="center" />
 
             <TextView

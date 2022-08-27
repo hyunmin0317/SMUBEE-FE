@@ -44,6 +44,7 @@ class BoardActivity : AppCompatActivity() {
         planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
         board.setOnClickListener { startActivity(Intent(this, BoardActivity::class.java)) }
         user_info.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
+        notice.setOnClickListener { startActivity(Intent(this, NoticeActivity::class.java)) }
 
     }
 

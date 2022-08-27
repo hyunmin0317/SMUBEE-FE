@@ -5,7 +5,13 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_board.*
 import kotlinx.android.synthetic.main.activity_user_info.*
+import kotlinx.android.synthetic.main.activity_user_info.board
+import kotlinx.android.synthetic.main.activity_user_info.home
+import kotlinx.android.synthetic.main.activity_user_info.notice
+import kotlinx.android.synthetic.main.activity_user_info.planner
+import kotlinx.android.synthetic.main.activity_user_info.user_info
 import java.lang.Exception
 
 
@@ -27,6 +33,7 @@ class UserInfoActivity : AppCompatActivity() {
         planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
         board.setOnClickListener { startActivity(Intent(this, BoardActivity::class.java)) }
         user_info.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
+        notice.setOnClickListener { startActivity(Intent(this, NoticeActivity::class.java)) }
 
         logout.setOnClickListener {
             deleteInformation()
