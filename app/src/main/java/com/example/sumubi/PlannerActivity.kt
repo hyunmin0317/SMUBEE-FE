@@ -118,7 +118,7 @@ class PlannerActivity : AppCompatActivity() {
     }
 
     fun getClass() {
-        (application as MasterApplication).service.allClassList().enqueue(
+        (application as MasterApplication).service.allClassList("all").enqueue(
             object : Callback<ArrayList<Plan>> {
                 override fun onResponse(
                     call: Call<ArrayList<Plan>>,
