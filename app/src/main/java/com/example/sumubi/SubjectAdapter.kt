@@ -46,8 +46,11 @@ class SubjectAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val status = subjectList.get(position).status
         holder.name.setText(subjectList.get(position).name)
         holder.prof.setText(subjectList.get(position).prof+"교수님")
-        holder.status.setText(subjectList.get(position).status.toString()+"%")
+
+        if (status != -1)
+            holder.status.setText(status.toString()+"%")
     }
 }

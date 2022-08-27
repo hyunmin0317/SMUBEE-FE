@@ -31,6 +31,36 @@ class MainActivity : AppCompatActivity() {
         var username = getInformation("name")
         name.text = username
 
+        (application as MasterApplication).service.getSubjectList().enqueue(
+            object : Callback<ArrayList<Subject>> {
+                override fun onResponse(
+                    call: Call<ArrayList<Subject>>,
+                    response: Response<ArrayList<Subject>>
+                ) {
+
+                    if (response.isSuccessful) {
+                        val subjectlist = response.body()
+                        val adapter = SubjectAdapter(
+                            subjectlist!!,
+                            LayoutInflater.from(this@MainActivity),
+                            this@MainActivity
+                        )
+
+                        val layoutManager = GridLayoutManager(this@MainActivity, 2)
+                        course_recyclerview.adapter = adapter
+                        course_recyclerview.layoutManager = LinearLayoutManager(this@MainActivity)
+                        course_recyclerview.layoutManager = layoutManager
+                    } else {
+                        Toast.makeText(this@MainActivity, "400 Bad Request", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<ArrayList<Subject>>, t: Throwable) {
+                    Toast.makeText(this@MainActivity, "서버 오류", Toast.LENGTH_LONG).show()
+                }
+            }
+        )
+
         (application as MasterApplication).service.getCheckData().enqueue(
             object : Callback<Check> {
                 override fun onResponse(
@@ -53,8 +83,7 @@ class MainActivity : AppCompatActivity() {
             }
         )
 
-
-        (application as MasterApplication).service.getSubjectList().enqueue(
+        (application as MasterApplication).service.updateSubject().enqueue(
             object : Callback<ArrayList<Subject>> {
                 override fun onResponse(
                     call: Call<ArrayList<Subject>>,
