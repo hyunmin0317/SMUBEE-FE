@@ -165,7 +165,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="10dp"
-                android:background="@drawable/plannerb"
+                android:background="@drawable/planner"
                 android:gravity="center" />
 
             <TextView
@@ -183,7 +183,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="10dp"
-                android:background="@drawable/setting"
+                android:background="@drawable/settingb"
                 android:gravity="center" />
 
         </LinearLayout>
