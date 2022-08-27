@@ -6,6 +6,5 @@ class Subject(
     val name: String? = null,
     val prof: String? = null,
     val code: String? = null,
-    val course_status: Int? = null,
-    val assign_status: Int? = null
+    val status: Int? = null
 ):Serializable

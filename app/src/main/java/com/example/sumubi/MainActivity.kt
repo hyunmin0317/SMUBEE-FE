@@ -7,8 +7,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_board.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.board
 import kotlinx.android.synthetic.main.activity_main.home
@@ -31,6 +31,28 @@ class MainActivity : AppCompatActivity() {
         var username = getInformation("name")
         name.text = username
 
+        (application as MasterApplication).service.getCheckData().enqueue(
+            object : Callback<Check> {
+                override fun onResponse(
+                    call: Call<Check>,
+                    response: Response<Check>
+                ) {
+
+                    if (response.isSuccessful) {
+                        val check = response.body()
+                        complete.text = check!!.complete.toString()
+                        incomplete.text = check!!.incomplete.toString()
+                    } else {
+                        Toast.makeText(this@MainActivity, "400 Bad Request", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<Check>, t: Throwable) {
+                    Toast.makeText(this@MainActivity, "서버 오류", Toast.LENGTH_LONG).show()
+                }
+            }
+        )
+
 
         (application as MasterApplication).service.getSubjectList().enqueue(
             object : Callback<ArrayList<Subject>> {
@@ -46,8 +68,11 @@ class MainActivity : AppCompatActivity() {
                             LayoutInflater.from(this@MainActivity),
                             this@MainActivity
                         )
+
+                        val layoutManager = GridLayoutManager(this@MainActivity, 2)
                         course_recyclerview.adapter = adapter
                         course_recyclerview.layoutManager = LinearLayoutManager(this@MainActivity)
+                        course_recyclerview.layoutManager = layoutManager
                     } else {
                         Toast.makeText(this@MainActivity, "400 Bad Request", Toast.LENGTH_SHORT).show()
                     }
@@ -58,8 +83,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         )
-
-
 
         home.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
         planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }

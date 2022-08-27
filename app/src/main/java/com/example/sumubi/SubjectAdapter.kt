@@ -18,14 +18,12 @@ class SubjectAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView
         val prof: TextView
-        val course_status: TextView
-        val assign_status: TextView
+        val status: TextView
 
         init {
             name = itemView.findViewById(R.id.name)
             prof = itemView.findViewById(R.id.prof)
-            course_status = itemView.findViewById(R.id.course_status)
-            assign_status = itemView.findViewById(R.id.assign_status)
+            status = itemView.findViewById(R.id.status)
 
             itemView.findViewById<TextView>(R.id.name).setOnClickListener {
                 val intent = Intent(activity, SubjectActivity::class.java)
@@ -49,8 +47,7 @@ class SubjectAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name.setText(subjectList.get(position).name)
-        holder.prof.setText(subjectList.get(position).prof)
-        holder.course_status.setText(subjectList.get(position).course_status.toString())
-        holder.assign_status.setText(subjectList.get(position).assign_status.toString())
+        holder.prof.setText(subjectList.get(position).prof+"교수님")
+        holder.status.setText(subjectList.get(position).status.toString()+"%")
     }
 }
