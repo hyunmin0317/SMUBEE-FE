@@ -73,8 +73,7 @@ class SubjectActivity : AppCompatActivity() {
                         subject_recyclerview.adapter = adapter
                         subject_recyclerview.layoutManager = LinearLayoutManager(this@SubjectActivity)
                     } else {
-                        Toast.makeText(this@SubjectActivity, "400 Bad Request", Toast.LENGTH_SHORT)
-                            .show()
+                        Toast.makeText(this@SubjectActivity, "400 Bad Request", Toast.LENGTH_SHORT).show()
                     }
                 }
 

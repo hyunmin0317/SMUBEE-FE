@@ -113,6 +113,16 @@ class MainActivity : AppCompatActivity() {
             }
         )
 
+        val intent = Intent(this, AssignActivity::class.java)
+        complete_assign.setOnClickListener {
+            intent.putExtra("checked", true)
+            startActivity(intent)
+        }
+        incomplete_assign.setOnClickListener {
+            intent.putExtra("checked", false)
+            startActivity(intent)
+        }
+
         home.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
         planner.setOnClickListener { startActivity(Intent(this, PlannerActivity::class.java)) }
         board.setOnClickListener { startActivity(Intent(this, BoardActivity::class.java)) }

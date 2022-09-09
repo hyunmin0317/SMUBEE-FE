@@ -18,6 +18,9 @@
         android:theme="@style/Theme.SUMUBI"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AssignActivity"
+            android:exported="false" />
+        <activity
             android:name=".NoticeActivity"
             android:exported="false" />
         <activity

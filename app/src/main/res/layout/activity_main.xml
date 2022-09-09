@@ -66,6 +66,7 @@
             />
 
         <LinearLayout
+            android:id="@+id/complete_assign"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:padding="5dp"
@@ -91,13 +92,14 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
                     android:orientation="horizontal">
+
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:paddingLeft="30dp"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:orientation="vertical">
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingLeft="30dp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -111,27 +113,29 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <TextView
-                                android:text="Total"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="16dp"
-                                android:textColor="#ffffff"/>
+                                android:text="Total"
+                                android:textColor="#ffffff"
+                                android:textSize="16dp" />
 
                             <TextView
                                 android:id="@+id/complete"
-                                android:text="complete"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:textSize="16dp"
-                                android:textColor="#ffffff"/>
+                                android:text="complete"
+                                android:textColor="#ffffff"
+                                android:textSize="16dp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/incomplete_assign"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:padding="5dp"

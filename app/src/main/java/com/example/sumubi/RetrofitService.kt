@@ -68,4 +68,9 @@ interface RetrofitService {
         @Path("code") code: String,
         @Path("category") category: String
     ): Call<ArrayList<Data>>
+
+    @GET("courses/check/{check}")
+    fun getAssignList(
+        @Path("check") check: Int
+    ): Call<ArrayList<Data>>
 }
