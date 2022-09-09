@@ -30,7 +30,7 @@ class SubjectActivity : AppCompatActivity() {
         val code = intent.getStringExtra("code").toString()
 
         subject_name.text = name
-        professor.text = prof
+        professor.text = prof + "교수님"
 
         course.setBackgroundResource(R.drawable.whitebox)
         course.setTextColor(Color.parseColor("#000000"))
