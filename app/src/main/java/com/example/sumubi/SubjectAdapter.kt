@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -18,14 +19,16 @@ class SubjectAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView
         val prof: TextView
-        val status: TextView
+        val percent: TextView
+        val status: ProgressBar
 
         init {
             name = itemView.findViewById(R.id.name)
             prof = itemView.findViewById(R.id.prof)
+            percent = itemView.findViewById(R.id.percent)
             status = itemView.findViewById(R.id.status)
 
-            itemView.findViewById<TextView>(R.id.name).setOnClickListener {
+            itemView.setOnClickListener {
                 val intent = Intent(activity, SubjectActivity::class.java)
                 val subject = subjectList.get(adapterPosition)
                 intent.putExtra("name", subject.name)
@@ -50,7 +53,9 @@ class SubjectAdapter(
         holder.name.setText(subjectList.get(position).name)
         holder.prof.setText(subjectList.get(position).prof+"교수님")
 
-        if (status != -1)
-            holder.status.setText(status.toString()+"%")
+        if (status != -1) {
+            holder.percent.setText(status.toString() + " %")
+            holder.status.setProgress(status!!)
+        }
     }
 }

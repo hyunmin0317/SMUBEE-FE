@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="progress_background">#94aabb</color>
+    <color name="progress_progress">#0c2646</color>
+    <color name="main_ob_1">#355584</color>
+    <color name="main_ob_2">#0f2a52</color>
+    <color name="background_color1">#e5e5e5</color>
+    <color name="boundary_line">#d0d0d0</color>
+    <color name="ment">#303030</color>
 </resources>
