@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:textColor="#000000"
+            android:fontFamily="@font/nanumbarunbold"
             android:text="학번" />
 
         <EditText
@@ -39,6 +40,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:gravity="center"
+            android:fontFamily="@font/nanumbarun"
             android:textColorHint="#383A3C" />
 
         <TextView
@@ -47,6 +49,7 @@
             android:layout_marginTop="10dp"
             android:textSize="15dp"
             android:textColor="#000000"
+            android:fontFamily="@font/nanumbarunbold"
             android:text="비밀번호" />
 
         <EditText
@@ -55,6 +58,7 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:gravity="center"
+            android:fontFamily="@font/nanumbarun"
             android:inputType="textPassword"
             android:textColorHint="#383A3C" />
 
@@ -74,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="20dp"
-                android:textStyle="bold"
+                android:fontFamily="@font/nanumbarunbold"
                 android:textColor="#000000"
                 android:text="로그인" />
 

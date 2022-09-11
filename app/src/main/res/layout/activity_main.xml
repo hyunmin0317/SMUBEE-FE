@@ -30,7 +30,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:textSize="30dp"
-                android:fontFamily="@font/acube"
+                android:fontFamily="@font/nanumbarunbold"
                 android:textColor="#000000"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="10dp"
@@ -45,7 +45,6 @@
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:textSize="20dp"
-                android:fontFamily="@font/acube"
                 android:textColor="#ffffff"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="10dp"
@@ -62,6 +61,7 @@
             android:textColor="#000000"
             android:textSize="25dp"
             android:layout_margin="10dp"
+            android:fontFamily="@font/nanumbarun"
             android:text="안녕하세요"
             />
 
@@ -107,6 +107,7 @@
                             android:layout_marginBottom="6dp"
                             android:text="완료한 과제"
                             android:textColor="#ffffff"
+                            android:fontFamily="@font/nanumbarun"
                             android:textSize="20dp" />
 
                         <LinearLayout
@@ -119,6 +120,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Total"
                                 android:textColor="#ffffff"
+                                android:fontFamily="@font/nanumbarun"
                                 android:textSize="16dp" />
 
                             <TextView
@@ -127,6 +129,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:text="complete"
+                                android:fontFamily="@font/nanumbarun"
                                 android:textColor="#ffffff"
                                 android:textSize="16dp" />
                         </LinearLayout>
@@ -163,17 +166,18 @@
                     android:orientation="horizontal">
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:paddingLeft="30dp"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:orientation="vertical">
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingLeft="30dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="6dp"
                             android:text="완료하지 않은 과제"
+                            android:fontFamily="@font/nanumbarun"
                             android:textColor="#ffffff"
                             android:textSize="20dp" />
 
@@ -186,6 +190,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="16dp"
+                                android:fontFamily="@font/nanumbarun"
                                 android:textColor="#ffffff"/>
 
                             <TextView
@@ -195,6 +200,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:textSize="16dp"
+                                android:fontFamily="@font/nanumbarun"
                                 android:textColor="#ffffff"/>
                         </LinearLayout>
                     </LinearLayout>
@@ -216,7 +222,7 @@
                 android:text="강의진도율"
                 android:textSize="25dp"
                 android:layout_marginLeft="10dp"
-                android:fontFamily="@font/acube"
+                android:fontFamily="@font/nanumbarunbold"
                 android:textColor="#000000" />
 
             <androidx.recyclerview.widget.RecyclerView

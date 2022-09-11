@@ -25,7 +25,7 @@
             android:gravity="center"
             android:text="0 %"
             android:textColor="#000000"
-            android:fontFamily="@font/acube"
+            android:fontFamily="@font/nanumbarunbold"
             android:textSize="12dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -44,8 +44,8 @@
             android:layout_marginBottom="6dp"
             android:text="name"
             android:textColor="#000000"
-            android:fontFamily="@font/acube"
-            android:textSize="15dp" />
+            android:fontFamily="@font/nanumbarunbold"
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/prof"
@@ -54,6 +54,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
             android:textSize="12dp"
+            android:fontFamily="@font/nanumbarun"
             android:textColor="#000000"/>
 
     </LinearLayout>

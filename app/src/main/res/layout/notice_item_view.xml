@@ -32,6 +32,7 @@
             <TextView
                 android:id="@+id/type"
                 android:text="과제"
+                android:fontFamily="@font/nanumbarunbold"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:layout_width="wrap_content"
@@ -52,13 +53,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18dp"
-                android:fontFamily="@font/acube"
+                android:fontFamily="@font/nanumbarunbold"
                 android:layout_marginBottom="6dp"
                 android:textColor="#000000"/>
 
         <TextView
             android:id="@+id/title"
             android:text="title"
+            android:fontFamily="@font/nanumbarun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16dp"
@@ -76,6 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14dp"
+            android:fontFamily="@font/nanumbarunlight"
             android:layout_marginBottom="6dp"
             android:textColor="#000000"/>
 
@@ -86,6 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14dp"
+            android:fontFamily="@font/nanumbarunlight"
             android:layout_marginBottom="6dp"
             android:textColor="#000000"/>
     </LinearLayout>
