@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sangmyung.sumubi">
+    package="com.smu.sumubee">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
-        android:name="com.sangmyung.sumubi.MasterApplication"
+        android:name="com.smu.sumubee.MasterApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,13 +18,13 @@
         android:theme="@style/Theme.SUMUBI"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.sangmyung.sumubi.AssignActivity"
+            android:name="com.smu.sumubee.AssignActivity"
             android:exported="false" />
         <activity
-            android:name="com.sangmyung.sumubi.NoticeActivity"
+            android:name="com.smu.sumubee.NoticeActivity"
             android:exported="false" />
         <activity
-            android:name="com.sangmyung.sumubi.IntroActivity"
+            android:name="com.smu.sumubee.IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,14 +32,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.sangmyung.sumubi.BoardActivity" />
-        <activity android:name="com.sangmyung.sumubi.MainActivity" />
-        <activity android:name="com.sangmyung.sumubi.UpdateActivity" />
-        <activity android:name="com.sangmyung.sumubi.CreateActivity" />
-        <activity android:name="com.sangmyung.sumubi.UserInfoActivity" />
-        <activity android:name="com.sangmyung.sumubi.LoginActivity" />
-        <activity android:name="com.sangmyung.sumubi.PlannerActivity" />
-        <activity android:name="com.sangmyung.sumubi.SubjectActivity" />
+        <activity android:name="com.smu.sumubee.BoardActivity" />
+        <activity android:name="com.smu.sumubee.MainActivity" />
+        <activity android:name="com.smu.sumubee.UpdateActivity" />
+        <activity android:name="com.smu.sumubee.CreateActivity" />
+        <activity android:name="com.smu.sumubee.UserInfoActivity" />
+        <activity android:name="com.smu.sumubee.LoginActivity" />
+        <activity android:name="com.smu.sumubee.PlannerActivity" />
+        <activity android:name="com.smu.sumubee.SubjectActivity" />
     </application>
 
 </manifest>
