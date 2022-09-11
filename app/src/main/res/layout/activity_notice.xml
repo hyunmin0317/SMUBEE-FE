@@ -92,7 +92,7 @@
                 android:id="@+id/home"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="96.27"
                 android:layout_margin="10dp"
                 android:background="@drawable/home"
                 android:gravity="center" />
@@ -101,7 +101,7 @@
                 android:id="@+id/board"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="125.95"
                 android:layout_margin="10dp"
                 android:background="@drawable/board"
                 android:gravity="center" />
@@ -110,7 +110,7 @@
                 android:id="@+id/planner"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="130.32"
                 android:layout_margin="10dp"
                 android:background="@drawable/planner"
                 android:gravity="center" />
@@ -119,7 +119,7 @@
                 android:id="@+id/notice"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="110.69"
                 android:layout_margin="10dp"
                 android:background="@drawable/noticeb"
                 android:gravity="center" />
@@ -128,11 +128,12 @@
                 android:id="@+id/user_info"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="123.06"
                 android:layout_margin="10dp"
                 android:background="@drawable/setting"
                 android:gravity="center" />
 
         </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>
