@@ -128,11 +128,6 @@ class MainActivity : AppCompatActivity() {
         board.setOnClickListener { startActivity(Intent(this, BoardActivity::class.java)) }
         user_info.setOnClickListener { startActivity(Intent(this, UserInfoActivity::class.java)) }
         notice.setOnClickListener { startActivity(Intent(this, NoticeActivity::class.java)) }
-
-        check.setOnClickListener {
-            appPackage = "kr.co.echeck.smu"
-            checkInstalledApp(appPackage)
-        }
     }
 
     fun getInformation(info: String): String? {
@@ -140,17 +135,5 @@ class MainActivity : AppCompatActivity() {
         val information = sp.getString(info, "null")
         if (information == "null") return null
         else return information
-    }
-
-    fun checkInstalledApp(packageName: String) {
-        if (packageManager.getLaunchIntentForPackage(packageName)==null) {
-            try {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+packageName)))
-            } catch (e: Exception) {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+packageName)))
-            }
-        }
-        else
-            startActivity(packageManager.getLaunchIntentForPackage(packageName))
     }
 }
