@@ -45,7 +45,6 @@ class AssignActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<Data>>, t: Throwable) {
-                    Toast.makeText(this@AssignActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )

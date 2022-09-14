@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<Subject>>, t: Throwable) {
-                    Toast.makeText(this@MainActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )
@@ -78,7 +77,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<Check>, t: Throwable) {
-                    Toast.makeText(this@MainActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )
@@ -108,7 +106,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<Subject>>, t: Throwable) {
-                    Toast.makeText(this@MainActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )

@@ -78,7 +78,6 @@ class SubjectActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<Data>>, t: Throwable) {
-                    Toast.makeText(this@SubjectActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )

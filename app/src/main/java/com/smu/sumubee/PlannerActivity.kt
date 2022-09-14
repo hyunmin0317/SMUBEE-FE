@@ -80,7 +80,6 @@ class PlannerActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<Plan>>, t: Throwable) {
-                    Toast.makeText(this@PlannerActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )
@@ -111,7 +110,6 @@ class PlannerActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<Plan>>, t: Throwable) {
-                    Toast.makeText(this@PlannerActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )
@@ -142,7 +140,6 @@ class PlannerActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<Plan>>, t: Throwable) {
-                    Toast.makeText(this@PlannerActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )
@@ -158,7 +155,6 @@ class PlannerActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<Plan>>, t: Throwable) {
-                    Toast.makeText(this@PlannerActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )

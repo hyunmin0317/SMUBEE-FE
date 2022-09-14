@@ -67,7 +67,6 @@ class NoticeActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<Plan>>, t: Throwable) {
-                    Toast.makeText(this@NoticeActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )
@@ -81,7 +80,6 @@ class NoticeActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<Announce>>, t: Throwable) {
-                    Toast.makeText(this@NoticeActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )

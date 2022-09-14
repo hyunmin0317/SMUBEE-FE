@@ -54,7 +54,6 @@ class CreateActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Plan>, t: Throwable) {
-                Toast.makeText(this@CreateActivity, "서버 오류", Toast.LENGTH_LONG).show()
             }
         })
     }

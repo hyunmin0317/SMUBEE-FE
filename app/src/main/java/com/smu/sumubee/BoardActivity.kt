@@ -70,7 +70,6 @@ class BoardActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<Announce>>, t: Throwable) {
-                    Toast.makeText(this@BoardActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )
@@ -84,7 +83,6 @@ class BoardActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<Announce>>, t: Throwable) {
-                    Toast.makeText(this@BoardActivity, "서버 오류", Toast.LENGTH_LONG).show()
                 }
             }
         )
